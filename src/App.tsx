@@ -3,6 +3,7 @@ import './App.css';
 import Place from './components/Misto';
 import { ThemeProvider, theme } from './theme/styled-components';
 import GlobalStyle from './theme/global-style';
+import Gifts from './components/Gifts';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         </a>
          */}
          <Place />
+         <Gifts />
       </header>        
     </div>
     </ThemeProvider>

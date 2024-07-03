@@ -1,8 +1,17 @@
 import React from "react";
 
-import { StyledPlaceIntro, LeftImgCol, RightCol, StyledHeadline, StyledSubHeadline, StyledDescription } from "./styled";
+import { 
+    StyledPlaceIntro, 
+    StyledImageFour,
+    RightCol, 
+    StyledHeadline, 
+    StyledSubHeadline, 
+    StyledDescription,
+ } from "./styled";
+import { SingleImage } from "../../../preComponents/Image";
 
 export type PlaceIntroDataType = {
+    images: SingleImage | SingleImage[]
     perex: string
     description: string
   }
@@ -13,22 +22,22 @@ interface Props {
 
 const PlaceIntro: React.FC<Props>= ({ data }) => {
 
-    const { perex, description} = data
+    const { images, perex, description} = data
 
     return (
         <StyledPlaceIntro column={2}>
-            <LeftImgCol>Tady bude obrázek</LeftImgCol>
+            <StyledImageFour images={images} />
             <RightCol>
-            <StyledHeadline>
+              <StyledHeadline>
                 Místo konání
-            </StyledHeadline>
-            {perex}
-            <StyledSubHeadline>
+              </StyledHeadline>
+              {perex}
+              <StyledSubHeadline>
                 Dress code
-            </StyledSubHeadline>
-            <StyledDescription>
+              </StyledSubHeadline>
+              <StyledDescription>
                 {description}
-            </StyledDescription>
+              </StyledDescription>
             </RightCol>
         </StyledPlaceIntro>
     )

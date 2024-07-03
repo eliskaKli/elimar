@@ -6,7 +6,7 @@ import styled, { css } from "styled-components";
 import { Color } from "../../../theme/variables/color";
 
 type SectionPadding = {
-  top?: number
+  top?: number 
   bottom?: number
 }
 
@@ -15,7 +15,7 @@ export interface SectionProps {
   bgColor?: keyof Color
   className?: string
   column?: number
-  textAlign?: 'left' | 'center' | 'right'
+  textalign?: 'left' | 'center' | 'right'
   padding?: {
     sm?: number | SectionPadding
     lg?: number | SectionPadding
@@ -30,7 +30,7 @@ const Section: React.FC<SectionProps>= ({
     children,
     className,
     column,
-    textAlign = 'left',
+    textalign = 'left',
     padding = {
         sm: 32,
         lg: {
@@ -39,7 +39,7 @@ const Section: React.FC<SectionProps>= ({
         },
     },
 }) => {
-    const sectionPadding: {
+    const sectionpadding: {
         sm: SectionPadding
         lg: SectionPadding
     } = {
@@ -53,37 +53,77 @@ const Section: React.FC<SectionProps>= ({
         },
     }
 
-
     return (
         <StyledSection
           bgColor={bgColor}
           className={className}
           column={column}
-          textAlign={textAlign}
-          sectionPadding={sectionPadding}
+          textalign={textalign}
+          sectionpadding={sectionpadding}
         >
             {children}
         </StyledSection>
     )
 }
 
+const StyledSection = styled.div.attrs<{ sectionpadding: { sm: SectionPadding; lg: SectionPadding } }>(
+  ({ sectionpadding }) => ({
+    style: {
+      paddingTop: rem(sectionpadding.sm.top ?? SECTION_PADDING_SM),
+      paddingBottom: rem(sectionpadding.sm.bottom ?? SECTION_PADDING_SM),
+    },
+}))<
+Pick<
+  SectionProps,
+  | 'bgColor' 
+  | 'column' 
+  | 'textalign'
+  > & {
+  sectionpadding: {
+    sm: SectionPadding;
+    lg: SectionPadding;
+  };
+}>`
+  ${({ bgColor, theme }) => css`
+    background: ${bgColor && bgColor in theme.color ? theme.color[bgColor] : theme.color.green};
+  `}
 
-const StyledSection = styled.div<
+  ${({ textalign }) => textalign && css`
+    text-align: ${textalign};
+  `}
+
+  @media (min-width: ${ ({ theme }) => theme.breakpoints.md}px) {
+    ${({ column }) => column === 2 && css `
+      display: grid;
+      column-gap: ${rem(64)};
+      grid-template-columns: 1fr 1fr;
+    `}
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}px) {
+    ${({ sectionpadding }) => css`
+      padding-top: ${rem(sectionpadding.lg?.top ?? SECTION_PADDING_LG)};
+      padding-bottom: ${rem(sectionpadding.lg?.bottom ?? SECTION_PADDING_LG)};
+    `}
+  }
+`;
+
+/* const StyledSection = styled.div<
   Pick<
     SectionProps, 
     | 'bgColor'
     | 'column'
     | 'textAlign'
   > & {
-    sectionPadding: {
+    sectionpadding: {
         sm: SectionPadding
         lg: SectionPadding
     }
   }
 >`
-  ${({ sectionPadding }) => css`
-    padding-top: ${rem(sectionPadding.sm?.top ?? SECTION_PADDING_SM)};
-    padding-bottom: ${rem(sectionPadding.sm.bottom ?? SECTION_PADDING_SM)};
+  ${({ sectionpadding }) => css`
+    padding-top: ${rem(sectionpadding.sm?.top ?? SECTION_PADDING_SM)};
+    padding-bottom: ${rem(sectionpadding.sm?.bottom ?? SECTION_PADDING_SM)};
   `}
 
   ${({bgColor, theme }) => css `
@@ -110,11 +150,11 @@ const StyledSection = styled.div<
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}px) {
-    ${({ sectionPadding }) => css`
-      padding-top: ${rem(sectionPadding.lg?.top ?? SECTION_PADDING_LG)};
-      padding-bottom: ${rem(sectionPadding.lg?.bottom ?? SECTION_PADDING_LG)};
+    ${({ sectionpadding }) => css`
+      padding-top: ${rem(sectionpadding.lg?.top ?? SECTION_PADDING_LG)};
+      padding-bottom: ${rem(sectionpadding.lg?.bottom ?? SECTION_PADDING_LG)};
     `}
   }
-`
+` */
 
 export default Section

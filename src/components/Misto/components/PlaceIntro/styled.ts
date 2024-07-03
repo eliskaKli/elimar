@@ -1,16 +1,16 @@
 import styled from 'styled-components'
-import { Section } from '../../../preComponents'
+import { Section, Image } from '../../../preComponents'
 
 export const StyledPlaceIntro = styled(Section)`
   font-size: ${({ theme }) => theme.fontSizes.base};
 `
 
-export const LeftImgCol = styled.div`
- 
+export const StyledImageFour = styled(Image)`
 `
 
 export const RightCol = styled.div`
-
+  margin-top: auto;
+  margin-bottom: auto;
 `
 
 export const StyledHeadline = styled.h1`
