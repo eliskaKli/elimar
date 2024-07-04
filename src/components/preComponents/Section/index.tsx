@@ -22,8 +22,8 @@ export interface SectionProps {
   }
 }
 
-const SECTION_PADDING_SM = 32
-const SECTION_PADDING_LG = 64
+const SECTION_PADDING_SM = 64
+const SECTION_PADDING_LG = 128
 
 const Section: React.FC<SectionProps>= ({ 
     bgColor,
@@ -32,10 +32,10 @@ const Section: React.FC<SectionProps>= ({
     column,
     textalign = 'left',
     padding = {
-        sm: 32,
+        sm: 64,
         lg: {
-            bottom: 32,
-            top: 64,
+            bottom: 128,
+            top: 128,
         },
     },
 }) => {

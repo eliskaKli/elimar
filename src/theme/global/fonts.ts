@@ -1,16 +1,22 @@
-import fontFamilies from "../variables/fontFamilies"
+import { css } from "styled-components";
 
-const fonts = `
+const fonts = css`
 
-  body {
-    font-family: ${fontFamilies.primary};
+  body, p {
+    box-sizing: border-box;
+    color: ${({ theme }) => theme.color.grey};
+    font-family: ${({ theme }) => theme.fontFamilies.primary};
+    font-size: ${({ theme }) => theme.fontSizes.base}; 
+    font-weight: ${({ theme }) => theme.fontWeight.normal};
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: ${fontFamilies.secondary};
+    font-family: ${({ theme }) => theme.fontFamilies.secondary};
+    color: ${({ theme }) => theme.color.grey};
+    margin-bottom: 0;
+    margin-top: 0;
   }
 
 
