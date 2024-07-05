@@ -4,9 +4,11 @@ import './App.css';
 import { ThemeProvider, theme } from './theme/styled-components';
 import GlobalStyle from './theme/global-style';
 
+import Header, { headerData } from './components/Header';
 import Gifts from './components/Gifts';
 import Place from './components/Misto';
 import Contact from './components/Contact';
+import Ceremony from './components/Ceremony';
 
 function App() {
   return (
@@ -14,10 +16,12 @@ function App() {
       <GlobalStyle />
       <div className="App">
         <header className="App-header">
-          <Place />
-          <Gifts />
-          <Contact />
-        </header>        
+          <Header headerData={headerData}/>
+        </header>       
+        <Ceremony /> 
+        <Place />
+        <Gifts />
+        <Contact />
       </div>
     </ThemeProvider>
   );

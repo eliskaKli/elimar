@@ -6,13 +6,17 @@ import { SingleImage } from "../preComponents/Image";
 import ples from '../../assets/photos/ples.jpg'
 import kytkyL from '../../assets/svg/kytkyLeft.svg'
 import kytkyR from '../../assets/svg/kytkyRight.svg'
+import { Button } from "../preComponents";
+import { ButtonProps } from "../preComponents/Button";
 
 export type ContactDataType = {
+    id: string
     description: {
         firstP: string
         secondP: string
     }
     image: SingleImage
+    button: ButtonProps
     ilustration: {
         kytkyL: string
         kytkyR: string
@@ -20,6 +24,7 @@ export type ContactDataType = {
 }
 
 const contactData: ContactDataType = {
+    id: "contact",
     description: { 
       firstP: 'Pokud máte jakékoliv dotazy, neváhejte kontaktovat Elišku nebo Martina.',
       secondP: 'Oslavíš s námi naši svatbu? Vyplň dotazník kliknutím na následující tlačítko.',
@@ -27,6 +32,9 @@ const contactData: ContactDataType = {
       image: {
         src: ples,
         alt: 'Fotka Elišky a Martina',
+    },
+    button: {
+        href: "mapy.cz"
     },
     ilustration: {
         kytkyL: kytkyL,
@@ -36,10 +44,10 @@ const contactData: ContactDataType = {
 
 const Contact: React.FC = () => {
 
-  const { description, image } = contactData
+  const { id, description, button, image } = contactData
   
   return (
-      <StyledContact bgColor="darkGreen">
+      <StyledContact bgColor="darkGreen" id={id}>
         <StyledContent>
             <StyledImage images={image} />
             <StyledHeadline>
@@ -51,6 +59,10 @@ const Contact: React.FC = () => {
             <StyledDescription>   
                 {description.secondP}
             </StyledDescription>
+            <Button 
+              href={button.href}              
+              size="md"
+            />
         </StyledContent>
 
         <StyledBgImage>

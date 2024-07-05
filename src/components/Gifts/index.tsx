@@ -11,6 +11,7 @@ import dary2 from '../../assets/photos/dary2.jpg'
 import { StyledDescription } from "../Contact/styled";
 
 export type GiftsDataType = {
+    id: string
     images: SingleImage | SingleImage[]
     description1: string
     description2: string
@@ -25,6 +26,7 @@ const fourImages: SingleImage[] = [
 ]
 
 const giftsData: GiftsDataType = {
+    id: "gifts",
     images: fourImages,
     description1: 
     'Jsme upřímně šťastni, že budeme moct tento den oslavit s vámi! Dary s sebou prosím nevozte, máme malý byt a neměli bychom je kam dát. Eliška nemá ráda zbytečnosti a Martin se neumí nepotřebných věcí zbavovat. Taktéž jídla a pití bude na místě hodně, tak prosím nic nevozte.',
@@ -37,11 +39,11 @@ const giftsData: GiftsDataType = {
 
 const Gifts: React.FC = () => {
 
-  const { images, description1, description2, description3 } = giftsData  
+  const { id, images, description1, description2, description3 } = giftsData  
 
   return (
-    <Layout.Container>
-      <StyledSection column={2} >  
+    <Layout.Container >
+      <StyledSection id={id} column={2} >  
         <StyledImageFour images={images} />
         <TextCol>
           <StyledHeadline>

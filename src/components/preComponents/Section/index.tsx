@@ -15,6 +15,7 @@ export interface SectionProps {
   bgColor?: keyof Color
   className?: string
   column?: number
+  id?: string
   textalign?: 'left' | 'center' | 'right'
   padding?: {
     sm?: number | SectionPadding
@@ -30,6 +31,7 @@ const Section: React.FC<SectionProps>= ({
     children,
     className,
     column,
+    id,
     textalign = 'left',
     padding = {
         sm: 64,
@@ -58,6 +60,7 @@ const Section: React.FC<SectionProps>= ({
           bgColor={bgColor}
           className={className}
           column={column}
+          id={id}
           textalign={textalign}
           sectionpadding={sectionpadding}
         >

@@ -12,6 +12,7 @@ import ples from '../../assets/photos/ples.jpg'
 import { Link } from './components/Address/styled'
 
 
+
 export type PlaceData = {
   placeIntroData: PlaceIntroDataType
   adressData: AdressDataType
@@ -68,17 +69,12 @@ const placeData: PlaceData = {
   }
 }
 
-
-
-
-
 const Place: React.FC = () => {
 
   const { placeIntroData, adressData } = placeData
 
     return (
-       /*  <Layout.Container> */
-          <StyledPlace> 
+          <StyledPlace id="place"> 
             <PlaceIntro data={placeIntroData} />
             <Address data={adressData}/> 
          </StyledPlace>

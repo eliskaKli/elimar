@@ -1,8 +1,7 @@
 import React  from "react";
 /* 
 import { Layout } from "../../../preComponents"; */
-import { TextCol } from "../PlaceIntro/styled";
-import { StyledAddress, Link, StyledSubTitle, StyledPerex, StyledImage } from "./styled";
+import { StyledAddress, TextCol, Link, StyledSubTitle, StyledPerex, StyledImage } from "./styled";
 import { StyledSubHeadline } from "../PlaceIntro/styled";
 import { SingleImage } from "../../../preComponents/Image";
 

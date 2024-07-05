@@ -1,6 +1,6 @@
 import rem from 'polished/lib/helpers/rem'
 import styled from "styled-components";
-import { Section, Image, Layout } from "../preComponents";
+import { Section, Image, Layout, Button } from "../preComponents";
 
 export const StyledContact = styled(Section)`
   position: relative;  
@@ -9,7 +9,9 @@ export const StyledContact = styled(Section)`
   text-align: center;
  
   @media (min-width: ${({ theme }) => theme.breakpoints.md}px) {
+    justify-content: center;
     !padding-bottom: ${(rem(128))};
+    text-align: center;
   }
 `
 
@@ -29,10 +31,18 @@ export const StyledHeadline = styled.h1`
 `
 
 export const StyledDescription = styled.p`
-  margin-bottom: ${rem(32)};
+  margin-bottom: ${rem(24)};
+
+  :last-child {
+    margin-bottom: ${rem(24)};
+  }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.md}px) {
     margin-bottom: ${rem(32)};
+
+  :last-child {
+    margin-bottom: ${rem(40)};
+  }
   }
 `
 
