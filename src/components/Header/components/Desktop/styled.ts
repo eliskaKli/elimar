@@ -1,12 +1,8 @@
 import rem from 'polished/lib/helpers/rem'
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const StyledDesktopHeader = styled.div`
- /*  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  margin: auto ${rem(64)}; */
+export const StyledDesktopHeader = styled.nav<{ className: string }>`
+  background: transparent;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
@@ -23,7 +19,36 @@ export const StyledDesktopHeader = styled.div`
       &:hover {
         text-decoration: underline;
       }
-    } 
+}}
+  
+   ${({ className }) => 
+      className === "nav-sticky-desktop" && css`
+        background: ${({ theme }) => theme.color.darkGreen};
+        margin: 0;
+        padding: ${rem(16)} ${rem(64)} 0 ${rem(64)};
+        position: sticky;
+        top: 0;
+        z-index: 100;
+
+        svg {
+          width: ${rem(120)};
+        }
+    `
+    }
+
+
+/*   .nav-sticky-desktop {
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: ${rem(76)};
+    background: ${({ theme }) => theme.color.darkGreen};
+
+    svg {
+      width: ${rem(120)};
+    }
+  }   */
   
 `
 
@@ -45,12 +70,6 @@ export const StyledNavigation = styled.nav`
 `
 
 export const StyledLogo = styled.svg`
-  /* align-items: center;
-  display: flex;  
-  flex-shrink: 0;  
-  justify-content: flex-start;
-  position: absolute;
-  margin: auto;  */
   grid-column: 2;
   justify-self: center;
 

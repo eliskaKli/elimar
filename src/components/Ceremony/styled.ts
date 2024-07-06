@@ -5,17 +5,20 @@ import { Section } from '../preComponents';
 export const StyledCeremony = styled(Section)`
   height: ${rem(200)};
   text-align: center;  
-  /* background-image: radial-gradient(circle at center, #1E5141 0% 80%, transparent 81% 100%);
-   */
+`
+
+export const StyledBlurBg = styled.div`
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  z-index: 1;
   
-  @media (min-width: ${({ theme }) => theme.breakpoints.xsMax}px) {
-    
-  } 
 `
 
 export const StyledText = styled.div`
   margin: ${rem(32)} ${rem(24)} auto auto;  
-  
+  z-index: 100;
 
   p {
     margin-bottom: ${rem(8)};
@@ -27,6 +30,7 @@ export const StyledTitle = styled.p`
   font-size: ${rem(20)};
   font-weight: ${({ theme }) => theme.fontWeight.bold};
   margin: auto ${rem(24)};
+  z-index: 5;
 `
 
 export const StyledDate = styled.p`

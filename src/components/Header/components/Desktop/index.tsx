@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import {
   StyledDesktopHeader,
@@ -11,10 +11,6 @@ import { ReactComponent as Logo } from '../../../../assets/svg/logo.svg'
 import Button from "../../../preComponents/Button";
 import { HeaderDataType } from "../..";
 
-/* export type HeaderDataType = {
-  button: ButtonProps
-} */
-
 interface Props {
   headerData: HeaderDataType
 }
@@ -22,8 +18,20 @@ interface Props {
 const DesktopHeader: React.FC<Props> = ({ headerData }) => {
   const { button } = headerData   
 
+  const [small, setSmall] = useState("false");
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 0) { 
+        setSmall("nav-sticky-desktop")
+      } else {
+        setSmall("nav-mobile")
+      }
+    })
+  })
+
   return (
-    <StyledDesktopHeader className="menu">
+    <StyledDesktopHeader className={small}>
       <StyledNavigation>
         <ul>
           <li><a href="#ceremony">Obřad</a></li>   
@@ -35,7 +43,7 @@ const DesktopHeader: React.FC<Props> = ({ headerData }) => {
       <StyledLogo 
         className="logo-desktop-L"
       >
-        <Logo />
+        <a href="#ceremony"><Logo /></a>
       </StyledLogo>
       <StyledCTASection>
         <a href="#contact">Kontakt</a>

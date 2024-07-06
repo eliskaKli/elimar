@@ -1,10 +1,12 @@
 import rem from 'polished/lib/helpers/rem'
 import styled from 'styled-components'
 import { Section, Image } from '../../../preComponents'
+import bg from "../../../../assets/svg/bgEllipses.svg"
 
 export const StyledAddress = styled(Section)`
   font-size: ${rem(16)};
   padding: ${rem(24)};
+  background-image: url(${bg});
 
   @media (min-width: ${({ theme }) => theme.breakpoints.md}px) {
     padding: ${rem(64)};

@@ -1,23 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { StyledMobileHeader, StyledLogo } from './styled'
 import { ReactComponent as Logo } from '../../../../assets/svg/logo.svg'
 
-//import { HeaderDataType } from "..";
 
-/* type HeaderDataType = {
-  button: ButtonProps
-} */
+type MobileHeaderDataType = {
+  size: boolean
+} 
 
-/* export interface Props {
-    headerData: HeaderDataType
-} */
+const mobileHeaderData: MobileHeaderDataType = {
+  size: false
+}
 
 const MobileHeader: React.FC = () => {
- /*  const { button } = headerData   */
+
+  const [small, setSmall] = useState("false");
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 0) { 
+        setSmall("nav-sticky-mobile")
+      } else {
+        setSmall("nav-mobile")
+      }
+    })
+  })
 
   return (
-      <StyledMobileHeader>
+      <StyledMobileHeader 
+        className={small}
+      >
         <StyledLogo 
           className="logo-mobile-L"
         >

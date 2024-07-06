@@ -4,6 +4,7 @@ import { Layout } from "../../../preComponents"; */
 import { StyledAddress, TextCol, Link, StyledSubTitle, StyledPerex, StyledImage } from "./styled";
 import { StyledSubHeadline } from "../PlaceIntro/styled";
 import { SingleImage } from "../../../preComponents/Image";
+import bg from "../../../../assets/svg/bgEllipses.svg"
 
 export type AdressDataType = {
     adress: string
@@ -39,8 +40,9 @@ const Address: React.FC<Props>= ({ data }) => {
                 Veřejná doprava
             </StyledSubTitle>
                 {description}
+                
           </TextCol>  
-          
+        
           <StyledImage images={image}/>
           
         </StyledAddress>

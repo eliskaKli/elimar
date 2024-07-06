@@ -8,11 +8,12 @@ import {
     StyledHour,
     StyledPlace,
     StyledBgImage,
+    StyledBlurBg,
  } from "./styled";
-import { Layout } from "../preComponents";
 
 import kytkyL from '../../assets/svg/kytkyLeft.svg'
 import kytkyR from '../../assets/svg/kytkyRight.svg'
+import bgGreen from "../../assets/svg/ellipseDarkGreen.svg"
 
 export type CeremonyDataType = {
     ilustration: {
@@ -32,7 +33,10 @@ const ceremonyData: CeremonyDataType = {
 const Ceremony: React.FC = () => {
 
   return (
-      <StyledCeremony>
+      <StyledCeremony id="ceremony">
+        <StyledBlurBg>
+          <img src={bgGreen} alt="" />
+        </StyledBlurBg>
         <StyledTitle>
           S radostí Vás zveme na naši svatbu
         </StyledTitle>
