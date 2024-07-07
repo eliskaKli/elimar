@@ -1,14 +1,14 @@
 import React from "react";
 
 import { Layout } from "../preComponents";
-import { StyledSection,  } from './styled'
+import { StyledSection, StyledDescription  } from './styled'
 import { TextCol, StyledHeadline, StyledImageFour } from "../Misto/components/PlaceIntro/styled";
 import { SingleImage } from "../preComponents/Image";
 
-import ples from '../../assets/photos/ples.jpg'
 import dary1 from '../../assets/photos/dary1.jpg'
-import dary2 from '../../assets/photos/dary2.jpg'
-import { StyledDescription } from "../Contact/styled";
+import dary3 from '../../assets/photos/dary3.jpg'
+import dary4 from '../../assets/photos/dary4.jpg'
+import dary5 from '../../assets/photos/dary5.jpg'
 
 export type GiftsDataType = {
     id: string
@@ -19,10 +19,10 @@ export type GiftsDataType = {
 }
 
 const fourImages: SingleImage[] = [
-    { src: dary1, alt: 'Fotka ze Španělska'},
-    { src: dary2, alt: 'Martin'},
-    { src: '/assets/photos/ples.jpg', alt: 'Obrázek zahrady 4'},
-    { src: ples, alt: 'Obrázek z plesu'},
+    { src: dary4, alt: 'Fotka svateba kamarádky 2024'},
+    { src: dary5, alt: 'Martin'},
+    { src: dary3, alt: 'Eliška na táboře'},
+    { src: dary1, alt: 'Fotka ze Španělska 2022'},
 ]
 
 const giftsData: GiftsDataType = {

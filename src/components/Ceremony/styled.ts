@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Section } from '../preComponents';
 
 export const StyledCeremony = styled(Section)`
-  height: ${rem(200)};
+  height: ${rem(160)};
   text-align: center;  
 `
 
@@ -13,11 +13,11 @@ export const StyledBlurBg = styled.div`
   transform: translateX(-50%);
   top: 0;
   z-index: 1;
-  
 `
 
 export const StyledText = styled.div`
-  margin: ${rem(32)} ${rem(24)} auto auto;  
+  margin: ${rem(32)} auto ${rem(24)}  auto;  
+  position: relative;
   z-index: 100;
 
   p {
@@ -30,6 +30,7 @@ export const StyledTitle = styled.p`
   font-size: ${rem(20)};
   font-weight: ${({ theme }) => theme.fontWeight.bold};
   margin: auto ${rem(24)};
+  position: relative;
   z-index: 5;
 `
 

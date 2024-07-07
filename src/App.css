@@ -1,6 +1,8 @@
 .App {
   text-align: center;
   background-color: #316555;
+  overflow: hidden;
+  max-width: fit-content;
 }
 
 .App-header {

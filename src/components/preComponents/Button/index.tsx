@@ -31,6 +31,7 @@ const Button: React.FC<ButtonProps> = ({
     
     return (
         <StyledButton 
+          className="button"
           href={href}
           onClick={onClick}
           size={size}

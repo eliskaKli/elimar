@@ -18,6 +18,18 @@ export const StyledContact = styled(Section)`
 export const StyledContent = styled(Layout.Container)`
   max-width: ${rem(644)};
   
+  * {
+    margin-bottom: ${rem(24)};
+  }
+
+  .button {
+    bottom: -${(rem(40))};
+  } 
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}px) {
+    margin-bottom: ${rem(32)};
+  }
+  
 `
 
 export const StyledHeadline = styled.h1`
@@ -31,7 +43,7 @@ export const StyledHeadline = styled.h1`
 `
 
 export const StyledDescription = styled.p`
-  margin-bottom: ${rem(24)};
+/* 
 
   :last-child {
     margin-bottom: ${rem(24)};
@@ -43,7 +55,7 @@ export const StyledDescription = styled.p`
   :last-child {
     margin-bottom: ${rem(40)};
   }
-  }
+  } */
 `
 
 export const StyledImage = styled(Image)`

@@ -11,11 +11,13 @@ export const StyledImageFour = styled(Image)`
 
 export const TextCol = styled.div`
   padding-top: ${rem(24)};
+  padding-bottom: ${rem(24)};
   margin-top: auto;
   margin-bottom: auto;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.md}px) {
     padding-top: ${rem(32)};
+    padding-bottom: ${rem(32)};
   }
 `
 

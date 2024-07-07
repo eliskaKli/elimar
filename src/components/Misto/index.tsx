@@ -8,7 +8,11 @@ import { AdressDataType } from './components/Address'
 import { PlaceIntroDataType } from './components/PlaceIntro'
 import { SingleImage } from '../preComponents/Image'
 
-import ples from '../../assets/photos/ples.jpg'
+import zahrada1 from '../../assets/photos/pampel.jpg'
+import zahrada2 from '../../assets/photos/pampel2.jpg'
+import zahrada3 from '../../assets/photos/pampel3.jpg'
+import zahrada4 from '../../assets/photos/pampel4.jpg'
+
 import { Link } from './components/Address/styled'
 
 
@@ -19,10 +23,10 @@ export type PlaceData = {
 }
 
 const fourImages: SingleImage[] = [
-  { src: ples, alt: 'Obrázek z plesu'},
-  { src: 'assets/photos/zahrada3.jpg', alt: 'Obrázek zahrady 3'},
-  { src: '/assets/photos/ples.jpg', alt: 'Obrázek zahrady 4'},
-  { src: ples, alt: 'Obrázek z plesu'},
+  { src: zahrada2, alt: 'Fotka zahrady1'},
+  { src: zahrada1, alt: 'Fotka zahrady2'},
+  { src: zahrada4, alt: 'Fotka zahrady3'},
+  { src: zahrada3, alt: 'Fotka zahrady4'},
 ]
 
   const LinkDobrisNam: React.FC = () => {
@@ -63,7 +67,7 @@ const placeData: PlaceData = {
     Využijte zástávku <LinkDobrisNam/> případně pokud jste dobrodružnější povahy, 
     můžete využít bližší zástávku na znamené <LinkDobrisLom/></>,
     image: {
-      src: ples,
+      src: zahrada1,
       alt: 'Mapa Chotobuše'
      }
   }
