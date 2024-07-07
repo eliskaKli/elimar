@@ -53,7 +53,6 @@ export const StyledPerex = styled.p`
   margin-top: ${rem(32)};
 `
 
-export const StyledImage = styled(Image)`
-
-
+export const StyledMap = styled.div`
+  border: ${({ theme }) => theme.border.radiusLg};
 `

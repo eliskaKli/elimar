@@ -15,6 +15,8 @@ import zahrada4 from '../../assets/photos/pampel4.jpg'
 import pole from '../../assets/photos/pampel5.jpg'
 
 import { Link } from './components/Address/styled'
+import { Map, ZoomControl, MouseControl, MarkerLayer, Marker, CompassControl, SyncControl } from 'react-mapycz'
+import { ClientOnly } from 'react-client-only'
 
 
 
@@ -46,6 +48,31 @@ const fourImages: SingleImage[] = [
     )
   }
 
+const mapChotobus: JSX.Element = (
+/*   <ClientOnly>
+     <Map height="100%" center={{lat: 49.77435583042677, lng: 14.171340183919252}}>
+       <ZoomControl/>
+       <MouseControl zoom={true} pan={true} wheel={true}/>
+       <CompassControl right={10} top={50} />
+       <SyncControl />
+        <MarkerLayer>
+         <Marker
+            coords={{lat: 49.77435583042677, lng: 14.171340183919252}}
+          />
+       </MarkerLayer> 
+    </Map> 
+  </ClientOnly> */
+
+  <Map height="100%" center={{lat: 49.77435583042677, lng: 14.171340183919252}}>
+    <ZoomControl/>
+    <MouseControl zoom={true} pan={true} wheel={true}/>
+    <CompassControl right={10} top={50} />
+    <SyncControl />
+  
+</Map> 
+
+)
+
 const placeData: PlaceData = {
   placeIntroData: {
     images: fourImages,
@@ -67,10 +94,11 @@ const placeData: PlaceData = {
     pak pouze v hodinových intervalech. 
     Využijte zástávku <LinkDobrisNam/> případně pokud jste dobrodružnější povahy, 
     můžete využít bližší zástávku na znamené <LinkDobrisLom/></>,
-    image: {
+/*     image: {
       src: pole,
       alt: 'Mapa Chotobuše'
-     }
+     } */
+    map: mapChotobus,
   }
 }
 

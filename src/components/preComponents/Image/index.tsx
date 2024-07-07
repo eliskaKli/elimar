@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { StyledImage, SingleImageContainer, ImageContainer } from './styled';
+import { MapProps } from 'react-mapycz';
 
 export interface SingleImage {
   src: string;

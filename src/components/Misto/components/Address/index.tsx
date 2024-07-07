@@ -1,8 +1,9 @@
 import React  from "react";
  
-import { StyledContainer, StyledAddress, TextCol, Link, StyledSubTitle, StyledPerex, StyledImage } from "./styled";
+import { StyledContainer, StyledAddress, TextCol, Link, StyledSubTitle, StyledPerex, StyledMap } from "./styled";
 import { StyledSubHeadline } from "../PlaceIntro/styled";
 import { SingleImage } from "../../../preComponents/Image";
+import { MapProps } from "react-mapycz";
 
 
 export type AdressDataType = {
@@ -10,7 +11,8 @@ export type AdressDataType = {
     url: string
     perex: string
     description: JSX.Element
-    image: SingleImage
+    /* image: SingleImage */
+    map: JSX.Element
 }
 
 interface Props {
@@ -19,13 +21,11 @@ interface Props {
 
 const Address: React.FC<Props>= ({ data }) => {
 
-    const {adress, url, perex, description, image} = data
+    const {adress, url, perex, description, map} = data
 
     return (
       <StyledContainer>
-        <StyledAddress 
-            column={2} 
-            /* bgColor={"darkGreen"} */>            
+        <StyledAddress column={2}>            
           <TextCol>
             <StyledSubHeadline>
                 Adresa a doprava
@@ -40,11 +40,11 @@ const Address: React.FC<Props>= ({ data }) => {
                 Veřejná doprava
             </StyledSubTitle>
                 {description}
-                
           </TextCol>  
-        
-          <StyledImage images={image}/>
-          
+    
+          <StyledMap>
+          {map}
+          </StyledMap>  
         </StyledAddress>
       </StyledContainer>
     )
