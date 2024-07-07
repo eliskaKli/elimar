@@ -5,6 +5,7 @@ import { StyledPlace } from './styled'
 import { Address, PlaceDetail, PlaceIntro, Parking } from './components'
 
 import { AdressDataType } from './components/Address'
+import { ParkingDataType } from './components/Parking'
 import { PlaceIntroDataType } from './components/PlaceIntro'
 import { SingleImage } from '../preComponents/Image'
 
@@ -20,9 +21,11 @@ import { ClientOnly } from 'react-client-only'
 
 
 
+
 export type PlaceData = {
   placeIntroData: PlaceIntroDataType
   adressData: AdressDataType
+  parkingData: ParkingDataType
 }
 
 const fourImages: SingleImage[] = [
@@ -99,17 +102,29 @@ const placeData: PlaceData = {
       alt: 'Mapa Chotobuše'
      } */
     map: mapChotobus,
+  },
+  parkingData: {
+    descriptionParking: {
+      firstD: "Přímo na místě bude sice parkování možné, ale značně omezené a rezervované primárně pro rodinné příslušníky a rodiny s dětmi. ",
+      secondD: "Pokud budete cestovat autem, využijte prosím parkování v přilehlém okolí: ideálním místem je vstup do anglického parku nebo na dobříšském náměstí, místo svatby je pak jen 10 minut pěšky. ",
+    },
+    descriptionUbytko: "Budeme moc rádi, pokud s námi vydržíte do nočních hodin a přespíte! Je možné ubytovat se v prostorách zahrady ve vlastním stanu (případně se najde pár míst uvnitř domu) a užít si, jak je libo.",
+    image: {
+      src: "",
+      alt: 'Těšte se na plánek parkování',
+    } 
   }
 }
 
 const Place: React.FC = () => {
 
-  const { placeIntroData, adressData } = placeData
+  const { placeIntroData, adressData, parkingData } = placeData
 
     return (
           <StyledPlace id="place"> 
             <PlaceIntro data={placeIntroData} />
             <Address data={adressData}/> 
+            <Parking data={parkingData} />
          </StyledPlace>
       
     )

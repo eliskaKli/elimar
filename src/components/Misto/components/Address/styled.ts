@@ -1,6 +1,6 @@
 import rem from 'polished/lib/helpers/rem'
 import styled from 'styled-components'
-import { Section, Image, Layout } from '../../../preComponents'
+import { Section, Layout } from '../../../preComponents'
 import bg from "../../../../assets/svg/bgEllipses.svg"
 
 export const StyledContainer = styled(Layout.Container)`

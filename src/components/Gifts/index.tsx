@@ -29,7 +29,7 @@ const giftsData: GiftsDataType = {
     id: "gifts",
     images: fourImages,
     description1: 
-    'Jsme upřímně šťastni, že budeme moct tento den oslavit s vámi! Dary s sebou prosím nevozte, máme malý byt a neměli bychom je kam dát. Eliška nemá ráda zbytečnosti a Martin se neumí nepotřebných věcí zbavovat. Taktéž jídla a pití bude na místě hodně, tak prosím nic nevozte.',
+    'Jsme upřímně šťastni, že budeme moct tento den oslavit s vámi! Dary s sebou prosím nevozte, máme malý byt a neměli bychom je kam dát. Eliška nemá ráda zbytečnosti a Martin se neumí nepotřebných věcí zbavovat, takže by hrozily jen nepříjemnosti. Taktéž jídla a pití bude na místě hodně, tak prosím nic nevozte.',
     description2: 
       'Velice oceníme, když nám místo daru pomůžete s tím, abychom si svatební den všichni společně užili.',
     description3:
