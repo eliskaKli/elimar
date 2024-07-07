@@ -2,9 +2,6 @@ import React  from "react";
  
 import { StyledContainer, StyledAddress, TextCol, Link, StyledSubTitle, StyledPerex, StyledMap } from "./styled";
 import { StyledSubHeadline } from "../PlaceIntro/styled";
-import { SingleImage } from "../../../preComponents/Image";
-import { MapProps } from "react-mapycz";
-
 
 export type AdressDataType = {
     adress: string

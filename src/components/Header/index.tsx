@@ -11,12 +11,11 @@ import { useMediaQuery } from 'react-responsive'
 
 export type HeaderDataType = {
     button: ButtonProps
-  /*   size: boolean */
 }
 
 export const headerData: HeaderDataType = {
     button: {
-       href: 'mapy.cz',
+       href: 'https://forms.gle/M8PtRPycQXfbLktW6 ',
     },
 } 
 

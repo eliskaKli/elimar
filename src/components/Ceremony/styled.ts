@@ -13,6 +13,12 @@ export const StyledBlurBg = styled.div`
   transform: translateX(-50%);
   top: 0;
   z-index: 1;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.Md}px) {
+    img {
+      width: ${(rem(760))};
+    }
+  } 
 `
 
 export const StyledText = styled.div`

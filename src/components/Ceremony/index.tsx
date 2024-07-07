@@ -17,33 +17,27 @@ import kytkyL from '../../assets/svg/kytkyLeft.svg'
 import kytkyR from '../../assets/svg/kytkyRight.svg'
 import bgGreen from "../../assets/svg/ellipseDarkGreen.svg"
 
-
-export type CeremonyDataType = {
-    ilustration: {
-        kytkyL: string
-        kytkyR: string
-    }
-}
-
-const ceremonyData: CeremonyDataType = {
-    ilustration: {
-        kytkyL: kytkyL,
-        kytkyR: kytkyR,
-    }
-}
-
-
 const Ceremony: React.FC = () => {
 
   const isMobileView = useMediaQuery({ query: '(max-width: 596px)' });
+  const isDesktopOrTablet = useMediaQuery({ query: '(min-width: 597px)' });
+
+  console.log( 'isMobileView', isMobileView)
 
   return (
       <StyledCeremony id="ceremony">
-        {(!isMobile || !isMobileView) && (
+        {(/* !isMobile || */ !isMobileView) && (
           <StyledBlurBg>
             <img src={bgGreen} alt="" />
           </StyledBlurBg>
-        )}
+        )} 
+       {/*  {
+          isDesktopOrTablet ? (
+            <StyledBlurBg>
+              <img src={bgGreen} alt="" />
+            </StyledBlurBg>
+          ) : null
+        } */}
         
         <StyledTitle>
           S radostí Vás zveme na naši svatbu

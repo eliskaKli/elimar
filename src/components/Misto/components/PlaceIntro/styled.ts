@@ -32,4 +32,8 @@ export const StyledSubHeadline = styled.h3`
   font-size: ${({ theme }) => theme.fontSizes.headingMd};
   margin-top: ${rem(32)};
   margin-bottom: ${rem(32)};
+
+    @media (min-width: ${({ theme }) => theme.breakpoints.md}px) {
+    font-size: ${({ theme }) => theme.fontSizes.headingSm};
+  }
 `

@@ -34,7 +34,7 @@ const contactData: ContactDataType = {
         alt: 'Fotka Elišky a Martina',
     },
     button: {
-        href: "mapy.cz"
+        href: "https://forms.gle/M8PtRPycQXfbLktW6"
     },
     ilustration: {
         kytkyL: kytkyL,
