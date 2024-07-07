@@ -34,7 +34,8 @@ const contactData: ContactDataType = {
         alt: 'Fotka Elišky a Martina',
     },
     button: {
-        href: "https://forms.gle/M8PtRPycQXfbLktW6"
+        href: "https://forms.gle/M8PtRPycQXfbLktW6",
+        title: "Plánuji přijít",
     },
     ilustration: {
         kytkyL: kytkyL,
@@ -62,6 +63,7 @@ const Contact: React.FC = () => {
             <Button 
               href={button.href}              
               size="md"
+              title={button.title}
             />
         </StyledContent>
 
