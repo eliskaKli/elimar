@@ -12,6 +12,7 @@ import zahrada1 from '../../assets/photos/pampel.jpg'
 import zahrada2 from '../../assets/photos/pampel2.jpg'
 import zahrada3 from '../../assets/photos/pampel3.jpg'
 import zahrada4 from '../../assets/photos/pampel4.jpg'
+import pole from '../../assets/photos/pampel5.jpg'
 
 import { Link } from './components/Address/styled'
 
@@ -67,7 +68,7 @@ const placeData: PlaceData = {
     Využijte zástávku <LinkDobrisNam/> případně pokud jste dobrodružnější povahy, 
     můžete využít bližší zástávku na znamené <LinkDobrisLom/></>,
     image: {
-      src: zahrada1,
+      src: pole,
       alt: 'Mapa Chotobuše'
      }
   }

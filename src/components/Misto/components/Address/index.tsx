@@ -1,10 +1,9 @@
 import React  from "react";
-/* 
-import { Layout } from "../../../preComponents"; */
-import { StyledAddress, TextCol, Link, StyledSubTitle, StyledPerex, StyledImage } from "./styled";
+ 
+import { StyledContainer, StyledAddress, TextCol, Link, StyledSubTitle, StyledPerex, StyledImage } from "./styled";
 import { StyledSubHeadline } from "../PlaceIntro/styled";
 import { SingleImage } from "../../../preComponents/Image";
-import bg from "../../../../assets/svg/bgEllipses.svg"
+
 
 export type AdressDataType = {
     adress: string
@@ -23,9 +22,10 @@ const Address: React.FC<Props>= ({ data }) => {
     const {adress, url, perex, description, image} = data
 
     return (
+      <StyledContainer>
         <StyledAddress 
             column={2} 
-            bgColor={"darkGreen"}>            
+            /* bgColor={"darkGreen"} */>            
           <TextCol>
             <StyledSubHeadline>
                 Adresa a doprava
@@ -46,6 +46,7 @@ const Address: React.FC<Props>= ({ data }) => {
           <StyledImage images={image}/>
           
         </StyledAddress>
+      </StyledContainer>
     )
 }
 

@@ -1,6 +1,6 @@
 import rem from 'polished/lib/helpers/rem'
 import styled from "styled-components";
-import { Section, Image, Layout, Button } from "../preComponents";
+import { Section, Image, Layout } from "../preComponents";
 
 export const StyledContact = styled(Section)`
   position: relative;  
