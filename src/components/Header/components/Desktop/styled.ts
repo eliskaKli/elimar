@@ -6,6 +6,7 @@ export const StyledDesktopHeader = styled.nav<{ className: string }>`
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
+  height: ${rem(140)};
   margin: auto ${rem(64)};
 
   li > a {
@@ -13,7 +14,12 @@ export const StyledDesktopHeader = styled.nav<{ className: string }>`
     font-family: ${({ theme }) => theme.fontFamilies.primary};
     font-size: ${({ theme }) => theme.fontSizes.headingXs};
     font-weight: ${({ theme }) => theme.fontWeight.semibold};
+    
     text-decoration: none;
+
+    g {
+      height: 0;
+    }
 
     @media ${({ theme }) => theme.mediaQueries.hover} {
       &:hover {
@@ -25,7 +31,8 @@ export const StyledDesktopHeader = styled.nav<{ className: string }>`
       className === "nav-sticky-desktop" && css`
         background: ${({ theme }) => theme.color.darkGreen};
         margin: 0;
-        padding: ${rem(16)} ${rem(64)} 0 ${rem(64)};
+        opacity: 0.98;
+        padding: ${rem(0)} ${rem(64)} 0 ${rem(64)};
         position: sticky;
         top: 0;
         z-index: 100;
@@ -69,15 +76,10 @@ export const StyledNavigation = styled.nav`
   }
 `
 
-export const StyledLogo = styled.svg`
+export const StyledLogo = styled.div`
   grid-column: 2;
+  height: ${rem(126)};
   justify-self: center;
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.md}px) {
-  Logo {
-    height: ${rem(126)};
-    width: ${rem(198)};
-    }
   }
 `
 

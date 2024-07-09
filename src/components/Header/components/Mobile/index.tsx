@@ -3,15 +3,6 @@ import React, { useEffect, useState } from "react";
 import { StyledMobileHeader, StyledLogo } from './styled'
 import { ReactComponent as Logo } from '../../../../assets/svg/logo.svg'
 
-
-type MobileHeaderDataType = {
-  size: boolean
-} 
-
-const mobileHeaderData: MobileHeaderDataType = {
-  size: false
-}
-
 const MobileHeader: React.FC = () => {
 
   const [small, setSmall] = useState("false");

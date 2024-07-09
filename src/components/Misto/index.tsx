@@ -97,10 +97,6 @@ const placeData: PlaceData = {
     pak pouze v hodinových intervalech. 
     Využijte zástávku <LinkDobrisNam/> případně pokud jste dobrodružnější povahy, 
     můžete využít bližší zástávku na znamené <LinkDobrisLom/></>,
-/*     image: {
-      src: pole,
-      alt: 'Mapa Chotobuše'
-     } */
     map: mapChotobus,
   },
   parkingData: {
@@ -110,7 +106,7 @@ const placeData: PlaceData = {
     },
     descriptionUbytko: "Budeme moc rádi, pokud s námi vydržíte do nočních hodin a přespíte! Je možné ubytovat se v prostorách zahrady ve vlastním stanu (případně se najde pár míst uvnitř domu) a užít si, jak je libo.",
     image: {
-      src: "",
+      src: pole,
       alt: 'Těšte se na plánek parkování',
     } 
   }

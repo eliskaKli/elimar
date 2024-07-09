@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Wedding LP in progress
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://eliskakli.github.io/elimar/
+
+First version with the intention of code improvement and intention of other website's section.
 
 ## Available Scripts
 
