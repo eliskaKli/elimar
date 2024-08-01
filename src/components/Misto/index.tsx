@@ -13,6 +13,9 @@ import zahrada1 from '../../assets/photos/pampel.jpg'
 import zahrada2 from '../../assets/photos/pampel2.jpg'
 import zahrada3 from '../../assets/photos/pampel3.jpg'
 import zahrada4 from '../../assets/photos/pampel4.jpg'
+import zahrada6 from '../../assets/photos/pampel6.jpg'
+import zahrada7 from '../../assets/photos/pampel7.jpg'
+import chotobus from '../../assets/photos/mapChotobus_1.png'
 import pole from '../../assets/photos/pampel5.jpg'
 
 import { Link } from './components/Address/styled'
@@ -30,9 +33,9 @@ export type PlaceData = {
 
 const fourImages: SingleImage[] = [
   { src: zahrada2, alt: 'Fotka zahrady1'},
-  { src: zahrada1, alt: 'Fotka zahrady2'},
-  { src: zahrada4, alt: 'Fotka zahrady3'},
-  { src: zahrada3, alt: 'Fotka zahrady4'},
+  { src: chotobus, alt: '3D letecky model Chotobuse'},
+  { src: zahrada6, alt: 'Pohled na hajovnu s jelenem ve stite'},
+  { src: zahrada7, alt: 'Pohled do drevene vyklizene garaze s Martinem stojícím uprostred'},
 ]
 
   const LinkDobrisNam: React.FC = () => {
@@ -96,7 +99,7 @@ const placeData: PlaceData = {
     description: <>   Autobus Dobříš - Praha (Smíchovské nádraží) jezdí několikrát do hodiny, ve večerních hodinách 
     pak pouze v hodinových intervalech. 
     Využijte zástávku <LinkDobrisNam/> případně pokud jste dobrodružnější povahy, 
-    můžete využít bližší zástávku na znamené <LinkDobrisLom/></>,
+    můžete využít bližší zástávku na znamení <LinkDobrisLom/></>,
     map: mapChotobus,
   },
   parkingData: {

@@ -88,7 +88,7 @@ Pick<
   };
 }>`
   ${({ bgColor, theme }) => css`
-    background: ${bgColor && bgColor in theme.color ? theme.color[bgColor] : theme.color.green};
+    background: ${bgColor && bgColor in theme.color ? theme.color[bgColor] : 'transparent'};
   `}
 
   ${({ textalign }) => textalign && css`

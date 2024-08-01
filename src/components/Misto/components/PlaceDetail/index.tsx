@@ -1,5 +1,6 @@
 import React from "react";
 import { StyledPlaceDetail } from './styled'
+import { Layout } from "../../../preComponents";
 
 interface Props {
     data: string
@@ -8,7 +9,9 @@ interface Props {
 const PlaceDetail:  React.FC<Props> = ({ data }) => {
 
     return (
-        <StyledPlaceDetail>{data}</StyledPlaceDetail>
+        <Layout.Container>
+            <StyledPlaceDetail>{data}</StyledPlaceDetail>
+        </Layout.Container>
     )
 }
 
