@@ -1,17 +1,22 @@
 import React  from "react";
  
-import { StyledContainer, StyledParking, TextCol,  } from "./styled";
+import { 
+  StyledContainer,
+  StyledParking, 
+  TextCol, 
+  StyledImage } from "./styled";
 import { StyledSubHeadline } from "../PlaceIntro/styled";
 import { StyledDescription } from "../../../Gifts/styled";
-import { StyledImage } from "../../../Contact/styled";
 import { SingleImage } from "../../../preComponents/Image";
 
 export type ParkingDataType = {
     descriptionParking: {
       firstD: string
+    }
+    descriptionUbytko: {
+      firstD: string
       secondD: string
     }
-    descriptionUbytko: string
     image: SingleImage 
 }
 
@@ -34,15 +39,15 @@ const Parking: React.FC<Props>= ({ data }) => {
             <StyledDescription>
               {descriptionParking.firstD}
             </StyledDescription>
-            <StyledDescription>
-              {descriptionParking.secondD}
-            </StyledDescription>  
                       
             <StyledSubHeadline>
                 Ubytování
             </StyledSubHeadline>
             <StyledDescription>
-              {descriptionUbytko}
+              {descriptionUbytko.firstD}
+            </StyledDescription> 
+            <StyledDescription>
+              {descriptionUbytko.secondD}
             </StyledDescription> 
           </TextCol>
 

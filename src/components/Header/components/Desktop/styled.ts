@@ -30,6 +30,7 @@ export const StyledDesktopHeader = styled.nav<{ className: string }>`
    ${({ className }) => 
       className === "nav-sticky-desktop" && css`
         background: ${({ theme }) => theme.color.darkGreen};
+        box-shadow: 0 ${rem(4)} ${rem(16)} 0 rgba(60,61,60,0.35);
         margin: 0;
         opacity: 0.98;
         padding: ${rem(0)} ${rem(64)} 0 ${rem(64)};

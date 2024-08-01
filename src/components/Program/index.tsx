@@ -83,7 +83,7 @@ const Program: React.FC = () => {
 
     return (
         <Layout.Container>
-          <StyledProgram column={2}>
+          <StyledProgram id="program" column={2}>
             <StyledTextPart>
               <StyledHeadline>
                 Program

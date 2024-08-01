@@ -1,6 +1,6 @@
 import rem from 'polished/lib/helpers/rem'
 import styled from 'styled-components'
-import { Section, Layout } from '../../../preComponents'
+import { Section, Layout, Image } from '../../../preComponents'
 import bg from "../../../../assets/svg/bgEllipses.svg"
 
 export const StyledContainer = styled(Layout.Container)`
@@ -25,9 +25,13 @@ export const TextCol = styled.div`
   padding-bottom: ${rem(24)};
   margin-top: auto;
   margin-bottom: auto;
+  order: 1;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.md}px) {
     padding-bottom: ${rem(32)};
   }
 `
 
+export const StyledImage = styled(Image)`
+  order: 2;
+`

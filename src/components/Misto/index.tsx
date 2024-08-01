@@ -17,10 +17,13 @@ import zahrada6 from '../../assets/photos/pampel6.jpg'
 import zahrada7 from '../../assets/photos/pampel7.jpg'
 import chotobus from '../../assets/photos/mapChotobus_1.png'
 import pole from '../../assets/photos/pampel5.jpg'
+import plan from '../../assets/photos/mapChotobus_Descrip_02.png'
+import parking from '../../assets/photos/parking.jpg'
 
 import { Link } from './components/Address/styled'
 import { Map, ZoomControl, MouseControl, MarkerLayer, Marker, CompassControl, SyncControl } from 'react-mapycz'
 import { ClientOnly } from 'react-client-only'
+import { PlaceDetailData } from './components/PlaceDetail'
 
 
 
@@ -29,6 +32,7 @@ export type PlaceData = {
   placeIntroData: PlaceIntroDataType
   adressData: AdressDataType
   parkingData: ParkingDataType
+  placeDetailData: PlaceDetailData
 }
 
 const fourImages: SingleImage[] = [
@@ -99,31 +103,40 @@ const placeData: PlaceData = {
     description: <>   Autobus Dobříš - Praha (Smíchovské nádraží) jezdí několikrát do hodiny, ve večerních hodinách 
     pak pouze v hodinových intervalech. 
     Využijte zástávku <LinkDobrisNam/> případně pokud jste dobrodružnější povahy, 
-    můžete využít bližší zástávku na znamení <LinkDobrisLom/></>,
+    můžete využít bližší zástávku <LinkDobrisLom/></>,
     map: mapChotobus,
   },
   parkingData: {
     descriptionParking: {
-      firstD: "Přímo na místě bude sice parkování možné, ale značně omezené a rezervované primárně pro rodinné příslušníky a rodiny s dětmi. ",
-      secondD: "Pokud budete cestovat autem, využijte prosím parkování v přilehlém okolí: ideálním místem je vstup do anglického parku nebo na dobříšském náměstí, místo svatby je pak jen 10 minut pěšky. ",
-    },
-    descriptionUbytko: "Budeme moc rádi, pokud s námi vydržíte do nočních hodin a přespíte! Je možné ubytovat se v prostorách zahrady ve vlastním stanu (případně se najde pár míst uvnitř domu) a užít si, jak je libo.",
+      firstD: "Přímo na místě bude parkování možné, ale kapacita není nafukovací. Určené je primárně pro rodinné příslušníky a hosty s dětmi. Pohodlně můžete zaparkovat na parkovišti u sportovní haly (5 minut pěšky) či u vstupu do anglického parku (10 minut).",
+      },
+    descriptionUbytko: {
+      firstD: "Budeme moc rádi, pokud s námi vydržíte do nočních hodin a přespíte! Je možné ubytovat se v prostorách zahrady ve vlastním stanu (případně se najde pár míst uvnitř domu) a užít si, jak je libo.",
+      secondD: "K umytí můžete využít stylovou kempingovou sprchu ve sprchovém koutu pod lískou. Pokud by pro vás papírový návod obsluhy nebyl dostatečně popisný, stačí odchytit nějakého dobříšského skauta nebo skautku, kteří vám jistě rádi poradí, jak sprchu zapojit.",
+    },    
     image: {
-      src: pole,
-      alt: 'Těšte se na plánek parkování',
+      src: parking,
+      alt: 'Mapa Dobříše se zakreslenými místy k parkování.',
     } 
+  },
+  placeDetailData: {
+    image: {
+      src: plan,
+      alt: 'Planek popisujici, jak se dostat do svatebnniho arealu'
+    }
   }
 }
 
 const Place: React.FC = () => {
 
-  const { placeIntroData, adressData, parkingData } = placeData
+  const { placeIntroData, adressData, parkingData, placeDetailData } = placeData
 
     return (
           <StyledPlace id="place"> 
             <PlaceIntro data={placeIntroData} />
-            <Address data={adressData}/> 
+            <Address data={adressData} /> 
             <Parking data={parkingData} />
+            <PlaceDetail data={placeDetailData} />
          </StyledPlace>
       
     )
