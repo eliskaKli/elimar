@@ -23,12 +23,13 @@ export const StyledAddress = styled(Section)`
 
 export const TextCol = styled.div`
   padding-bottom: ${rem(24)};
-  padding-right: ${rem(96)};
+  padding-right: ${rem(0)};
   margin-top: auto;
   margin-bottom: auto;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.md}px) {
     padding-bottom: ${rem(32)};
+    padding-right: ${rem(96)};
   }
 `
 

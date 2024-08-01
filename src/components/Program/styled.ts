@@ -18,13 +18,6 @@ export const StyledTableMap = styled.tbody`
     max-width: 100%;
     width: ${rem(80-16)}; 
   }
-
-  tr:first-child {
-  }
-
-  tr:last-child {
-
-  }
 `
 
 export const StyledProgram = styled(Section)`
@@ -34,18 +27,25 @@ export const StyledProgram = styled(Section)`
 
 export const StyledTextPart = styled.div`
   margin-top: ${rem(32)};
-  padding-right: ${rem(96)};
+  padding-right: ${rem(16)};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}px){
+    padding-right: ${rem(56)};
+  }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}px){
-   /*  margin-top: ${rem(64)}; */
+    padding-right: ${rem(96)};
   }
 `
 
 export const StyledTablePart = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: ${rem(32)};
   max-width: 100%;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.lgMax}px){
+    gap: ${rem(32)};
+  }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}px){
     display: grid;
@@ -67,6 +67,11 @@ export const StyledSubHeadline = styled.caption`
   font-size: ${({ theme }) => theme.fontSizes.headingMd};
   font-weight: ${({ theme }) => theme.fontWeight.bold};
   margin-bottom: ${rem(16)};
+  margin-top: ${rem(24)};  
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}px){
+    margin-top: ${rem(0)};  
+  }
 `
 /* 
 export const StyledTableFrSu = styled.div`
@@ -99,10 +104,6 @@ export const StyledTableFriday = styled.div`
 export const StyledTableSunday = styled.div`
   order: 3;
   max-width: 100%;
-  
-  @media (min-width: ${({ theme }) => theme.breakpoints.lg}px){
-    
-  }
 
 `
 
