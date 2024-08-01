@@ -13,7 +13,8 @@ export type ContactDataType = {
     id: string
     description: {
         firstP: string
-        secondP: string
+        secondP: JSX.Element
+        thirdP: string
     }
     image: SingleImage
     button: ButtonProps
@@ -26,8 +27,9 @@ export type ContactDataType = {
 const contactData: ContactDataType = {
     id: "contact",
     description: { 
-      firstP: 'Pokud máte jakékoliv dotazy, neváhejte kontaktovat Elišku nebo Martina.',
-      secondP: 'Oslavíš s námi naši svatbu? Vyplň dotazník kliknutím na následující tlačítko.',
+      firstP: "Moc se na vás těšíme a doufáme, že si svatební den společně užijeme.",
+      secondP: <>Pokud máte jakékoliv <strong>dotazy</strong>, neváhejte kontaktovat Elišku nebo Martina.</>,
+      thirdP: 'Oslavíš s námi naši svatbu? Vyplň dotazník kliknutím na následující tlačítko.',
     },
       image: {
         src: ples,
@@ -59,6 +61,9 @@ const Contact: React.FC = () => {
             </StyledDescription>
             <StyledDescription>   
                 {description.secondP}
+            </StyledDescription>
+            <StyledDescription>
+                {description.thirdP}
             </StyledDescription>
             <Button 
               href={button.href}              

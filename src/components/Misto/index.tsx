@@ -102,7 +102,7 @@ const placeData: PlaceData = {
     perex: 'Pokud nemůžete dorazit pěšky, doporučujeme využít veřejnou dopravu. Možnosti parkování přímo na místě budou omezené.',
     description: <>   Autobus Dobříš - Praha (Smíchovské nádraží) jezdí několikrát do hodiny, ve večerních hodinách 
     pak pouze v hodinových intervalech. 
-    Využijte zástávku <LinkDobrisNam/> případně pokud jste dobrodružnější povahy, 
+    Využijte zástávku <LinkDobrisNam/>, případně pokud jste dobrodružnější povahy, 
     můžete využít bližší zástávku <LinkDobrisLom/></>,
     map: mapChotobus,
   },

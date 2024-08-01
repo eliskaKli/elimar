@@ -1,6 +1,5 @@
 import React from "react";
 
-import { Layout } from "../preComponents";
 import { StyledSection, StyledDescription  } from './styled'
 import { TextCol, StyledHeadline, StyledImageFour } from "../Misto/components/PlaceIntro/styled";
 import { SingleImage } from "../preComponents/Image";
@@ -9,6 +8,7 @@ import dary1 from '../../assets/photos/dary1.jpg'
 import dary3 from '../../assets/photos/dary3.jpg'
 import dary4 from '../../assets/photos/dary4.jpg'
 import dary5 from '../../assets/photos/dary5.jpg'
+import { StyledContainer } from "../Misto/components/Address/styled";
 
 export type GiftsDataType = {
     id: string
@@ -42,7 +42,7 @@ const Gifts: React.FC = () => {
   const { id, images, description1, description2, description3 } = giftsData  
 
   return (
-    <Layout.Container >
+    <StyledContainer>
       <StyledSection id={id} column={2} >  
         <StyledImageFour images={images} />
         <TextCol>
@@ -54,7 +54,7 @@ const Gifts: React.FC = () => {
           <StyledDescription>{description3}</StyledDescription>
         </TextCol>
       </StyledSection>
-    </Layout.Container>
+    </StyledContainer>
   )
 
 }

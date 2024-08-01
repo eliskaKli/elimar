@@ -24,7 +24,7 @@ type TableRow = {
 type ProgramDataType = {
     description: {
         first: string;
-        second: string;
+        second: JSX.Element;
         sunday: string;
     }
     tableSaturday: TableRow[];
@@ -35,7 +35,7 @@ type ProgramDataType = {
 const programData: ProgramDataType = {
     description: {
         first: "Areál Chotobuše nabízí rozmanité možnosti vyžití, a tak je jenom na vás, jak budete chtít den strávit. Nejsme příznivci tradičního nabytého svatebního programu, takže se předem omlouváme milovníkům tradic a různých svatebních her. A také víme, že je pro všechny důležitější dát si v klidu něco dobrého k jídlu a pití a popovídat si pořádně s blízkými a přáteli, než koukat na to, jak dva lidi rozbíjí talíř nebo se snaží jíst polévku.",
-        second: "Mimo naplánovaný program (kde jsou časy pouze orientační) bude po celý den také možnost zahrát si kroket, dát si šlofíka v hamace ve stínu jabloní, a nebo zažít dobrodružství na Svatební Bojovce od tety Soni (doporučujeme obzvlášť pro ty menší). Večer pak můžeme společně posedět u ohně a zazpívat si, a nebo si trsnout v rytmu kvalitní i méně kvalitní hudby DJ Lahváče.",
+        second: <>Mimo naplánovaný program (kde jsou časy pouze orientační) bude po celý den také možnost zahrát si <strong>kroket</strong>, dát si šlofíka v hamace ve stínu jabloní, a nebo zažít dobrodružství na <strong>svatební bojovce</strong> od tety Soni (doporučujeme obzvlášť pro ty menší). Večer pak můžeme společně posedět u ohně a zazpívat si, a nebo si trsnout v rytmu kvalitní i méně kvalitní hudby dua Mini lidi.</>,
         sunday: "Po oslavách a zážitcích přijde čas na zklidnění a vyklizení prostoru. Budeme rádi, když si najdete  chvilku, ještě s námi pobydete a pomůžete nám.",
     },
     tableSaturday: [ 
@@ -44,20 +44,19 @@ const programData: ProgramDataType = {
       {time: '11:30', subject: 'Společné focení'},
       {time: '12:45-14:15', subject: 'Přípitek & Svatební hostina'},
       {time: '14:45', subject: 'Krájení dortu'},
-      {time: '15:30', subject: 'Soukromé: Sliby na skále'},
-      {time: '17:30', subject: 'Kvíz aneb co jsme nevěděli'},
-      {time: '19:00', subject: 'Hodinka tance bez elegance'},
+      {time: '16:30', subject: 'Svatební kvíz'},
+      {time: '18:00', subject: 'Soukromé: Sliby na skále'},
+      {time: '20:00', subject: 'Hodinka tance bez elegance'},
       {time: '20:30', subject: 'Oheň & zpěv'},
       {time: '21:00', subject: 'DJ Lahváč aneb disko trisko'},
     ],
     tableFriday: [
       {time: 'odpoledne', subject: 'Příjezd prvních hostů'},
-      {time: '', subject: 'Čančání Chotobuše'},
+      {time: '-', subject: 'Čančání Chotobuše'},
       {time: '19h', subject: 'Véča grilčo'},
     ],
     tableSunday: [
       {time: 'okolo 9:30', subject: 'Snídaně: les restes de noces.'},  
-      {time: 'od 10:30', subject: 'Úklid aneb zpátky do divočiny'},
     ]
 }
 
@@ -71,7 +70,6 @@ const Table: React.FC<{ rows: TableRow[] }> = ({ rows }) => (
                         <td>{row.subject}</td>
                     </tr>
                 </StyledTableMap>
-
             ))}
         {/* </tbody> */}
     </table>

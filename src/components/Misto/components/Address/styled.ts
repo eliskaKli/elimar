@@ -23,6 +23,7 @@ export const StyledAddress = styled(Section)`
 
 export const TextCol = styled.div`
   padding-bottom: ${rem(24)};
+  padding-right: ${rem(96)};
   margin-top: auto;
   margin-bottom: auto;
 

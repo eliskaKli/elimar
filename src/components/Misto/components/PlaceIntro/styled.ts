@@ -12,6 +12,7 @@ export const StyledImageFour = styled(Image)`
 export const TextCol = styled.div`
   padding-top: ${rem(24)};
   padding-bottom: ${rem(24)};
+  padding-left: ${rem(16)};
   margin-top: auto;
   margin-bottom: auto;
 

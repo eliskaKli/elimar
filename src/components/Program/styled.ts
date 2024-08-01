@@ -34,7 +34,7 @@ export const StyledProgram = styled(Section)`
 
 export const StyledTextPart = styled.div`
   margin-top: ${rem(32)};
-  padding-right: ${rem(32)};
+  padding-right: ${rem(96)};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}px){
    /*  margin-top: ${rem(64)}; */
